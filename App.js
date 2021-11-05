@@ -50,7 +50,10 @@ const App = () => {
         <View style={styles.contenido}>
           { mostrarForm? (
             <>
-            <Formulario/>
+            <Formulario
+              setCitas={setCitas}
+              setMostrarForm={setMostrarForm}
+              />
             </>
           ) : (
             <>
