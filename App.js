@@ -22,7 +22,8 @@ const App = () => {
   ]);
   // Eliminar paciente
   const eliminarPaciente = id => {
-
+    setCitas( citasActuales => ( citasActuales.filter( cita => cita.id !== id)));
+    // la que es igual la queremos eliminar, pero las que son diferentes la vamos filtrar y generamos otro arreglo
   };
 
   // Mostrar u Ocultar el formulario
@@ -57,7 +58,7 @@ const App = () => {
             <FlatList 
               style={styles.lista}
               data={citas}
-              renderItem={ ({ item })=> ( <Cita item={item} />)}
+              renderItem={ ({ item })=> ( <Cita item={item} eliminarPaciente={eliminarPaciente}/>)}
             />
             </>
           ) }
