@@ -51,10 +51,10 @@ const styles = StyleSheet.create({
   },
   label: {
     fontWeight: 'bold',
-    fontSize: 10
+    fontSize: 17
   },
   texto: {
-    fontSize: 10
+    fontSize: 17
   },
   textoEliminar: {
     color: colors.COLOR_TEXT,

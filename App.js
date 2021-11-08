@@ -12,14 +12,11 @@ import {
 import Cita from './src/components/Cita';
 import Formulario from './src/components/Formulario';
 import colors from './src/utils/color';
+import IconSvg from './src/utils/svg/IconSvg';
 
 const App = () => {
   const [mostrarForm, setMostrarForm] = useState(false);
-  const [citas, setCitas] = useState([
-    { id: 1, paciente: 'Rocky', propietario: 'Miguel', sintomas: 'No come'},
-    { id: 2, paciente: 'Benito', propietario: 'Daniel', sintomas: 'Falta de apetito'},
-    { id: 3, paciente: 'Fox', propietario: 'Javiera', sintomas: 'No duerme'}
-  ]);
+  const [citas, setCitas] = useState([]);
   // Eliminar paciente
   const eliminarPaciente = id => {
     setCitas( citasActuales => ( citasActuales.filter( cita => cita.id !== id)));
@@ -39,7 +36,11 @@ const App = () => {
   return (
     <TouchableWithoutFeedback onPress={ cerrarTeclado }>
       <View style={styles.contenedor}>
-        <Text style={styles.titulo}>Organizador de Citas</Text>
+        
+        <View style={styles.svgContenedor}>
+          <Text style={styles.titulo}>Organizador de Citas </Text>
+          <IconSvg />
+        </View>
 
         <View>
         <TouchableHighlight onPress={mostrarFormulario} style={styles.btnMostrarForm}>
@@ -103,6 +104,10 @@ const styles = StyleSheet.create({
   },
   lista: {
     flex: 1
+  },
+  svgContenedor: {
+    flexDirection: 'row',
+    justifyContent: 'center'
   }
 })
 
